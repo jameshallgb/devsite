@@ -1,0 +1,26 @@
+.brand-video{
+	padding: 20px;
+	display: block;
+	position: relative;
+	max-width: 100%;
+	z-index: 10;
+
+
+	.primary {
+		margin-bottom: 1em;
+	}
+
+	@include bp800 {
+		padding: 40px;
+	}
+
+	@include bp1200{
+		margin-right: 8.3333%;
+		margin-left: 80px;
+		margin-top: 180px;
+	}
+
+	@include bp1600 {
+		padding: 40px 60px;
+	}
+}

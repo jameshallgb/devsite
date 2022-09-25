@@ -1,0 +1,70 @@
+/*---------------------------------------------------------------
+	Forms
+--------------------------------------------------------------- */
+
+.nf-form-content {
+    overflow: hidden;
+}
+
+nf-fields-wrap {
+    overflow: hidden;
+}
+
+.nf-form-fields-required {
+    color: red;
+    display: none;
+}
+
+// nf-field {
+//
+// }
+//
+// .nf-field-label {
+//
+// }
+
+.ninja-forms-field {
+    padding: 18px 20px;
+
+    &::placeholder {
+    	text-transform: uppercase;
+    	color: $noir;
+    }
+}
+
+select#nf-field-7{
+	height: 55px;
+	-webkit-border-radius: 0;
+	border: 0;
+	outline: 1px inset #fff;
+	outline-offset: -1px;
+	color: $noir;
+	text-transform: uppercase;
+	text-indent: 20px;
+	cursor: pointer;
+}
+.nf-field-container{
+	margin-bottom: 10px !important;
+}
+
+/* Error handling */
+.nf-error-wrap {
+
+}
+
+.nf-error-msg {
+
+}
+
+input[type=button]{
+	padding: 25px 20px !important;
+	width: 100% !important;
+	text-align: left;
+
+
+
+}
+
+.nf-field-element input, .nf-field-element select, .nf-field-element textarea{
+	color: $noir;
+}

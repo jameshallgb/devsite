@@ -1,0 +1,89 @@
+/*---------------------------------------------------------------
+    Mobile Top Bar
+--------------------------------------------------------------- */
+
+.mobile-top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $mobile-top-bar-height;
+    background: $noir;
+    @include flexbox();
+    @include clearfix;
+    z-index: 9999;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $blanc;
+    font-size: 1.6rem;
+    background-image: linear-gradient($noir, lighten($noir,10));
+
+    @include bp1200 {
+        display: none;
+    } 
+}
+
+.icon-angle-down{
+    margin-left: 10px;
+}
+
+.mobile-top-btn {
+    display: inline-block;
+    float: left;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+
+    &--menu {
+        width: 35%;
+        color: $noir;
+        background: $vert;
+    }
+}
+
+// Used to trigger multiple numbers in the mobile top bar
+.js-toggle-location-numbers {
+    display: block;
+    padding: 5px;
+    width: 65%;
+    float: left;
+    text-align: center;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+}
+
+.location-numbers {
+    top: $mobile-top-bar-height;
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    display: none;
+    width: 100%;
+    background: linear-gradient(lighten($noir,10), lighten($noir,20));
+    overflow-y: scroll;
+    max-height: 80vh;
+    box-shadow: 0 40px 40px -20px rgba($noir,.85);
+
+    &--visible {
+        display: block;
+    }
+
+    a {
+        white-space: nowrap;
+        color: $blanc;
+        text-decoration: none;
+    }
+
+    .ld-phonenumber {
+        font-size: 2rem;
+        display: none;
+    }
+    
+    .ld-location {
+        padding: 5px 0;
+        @include flexbox();
+        @include flex-wrap(nowrap);
+        @include justify-content(space-between);
+    }
+}

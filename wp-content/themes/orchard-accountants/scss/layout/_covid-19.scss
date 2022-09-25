@@ -1,0 +1,108 @@
+.covid-19-update {
+    display: block;
+    position: fixed;
+    z-index: 99999999999;
+    padding: 40px 20px 20px 20px;
+    background: lighten($jaune,10);
+    color: $noir;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0 10px 80px rgba($noir, .85);
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 0;
+    max-width: 640px;
+
+    @include bp480{
+       width: 90%; 
+    }
+
+    @include bp800 {
+        padding: 80px 40px 40px 40px;
+        bottom: 0;
+        top: auto;
+    }
+    @include bp1200 {
+        
+        width: 50%;
+        
+    }
+
+    .hide-mob {
+        display: none;
+
+        @include bp800 {
+            display: inline;
+        }
+
+    }
+
+    h3 {
+        font-size: 2.2rem;
+        margin-bottom: .5rem;
+        line-height: 1.1;
+        font-weight: 700;
+
+        @include bp800 {
+            font-size: 2.8rem;
+        }
+
+        span {
+            color: darken($vert, 30);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+
+    }
+
+    p {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+        letter-spacing: 0;
+
+        @include bp800 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+    }
+
+    .large {
+        font-size: 1.8rem;
+
+        // @include bp800 {
+        //     font-size: 2.4rem;
+        // }
+
+    }
+
+    p a {
+        font-weight: bold;
+        text-decoration: underline;
+        color: $noir;
+
+        &:hover {
+            color: red;
+        }
+
+    }
+
+    .ld-phonenumber {
+        display: inline-block;
+    }
+
+}
+
+.close-covid {
+    display: none;
+    color: $noir;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    display: inline-block;
+    z-index: 999;
+    font-size: 30px;
+}

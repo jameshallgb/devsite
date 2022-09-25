@@ -1,0 +1,54 @@
+.why-choose-us{
+	width: 100%;
+	padding: 40px 0;
+
+	@include bp800{
+		padding: 80px 0;
+	}
+	
+	@include bp1600{
+		padding: 80px;
+	}
+
+	&__list{
+		@include flexbox();
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);
+		@include align-items(stretch);
+		list-style: none;
+		font-weight: bold;
+		font-size: 2rem;
+		width: 100%;
+
+
+		@include bp800{
+			padding: 0 80px;
+		}
+	}
+	&__item{
+		width: 100%;
+		@include flex-direction(row);
+		@include flexbox();
+		line-height: 1.25;
+		padding: 20px 40px 20px 20px;
+
+		@include bp800{
+			padding: 20px 0;
+			width: calc(50% - (60px));
+		}
+
+		@include bp1200{
+			padding: 0;
+			width: calc(25% - (60px));
+		}
+
+		&:before{
+			content: "\f00c";
+			font-family: "icomoon";
+			@include flexbox();
+			@include align-items(stretch);
+			padding: 10px 20px;
+			color: $vert;
+		}
+	}
+}

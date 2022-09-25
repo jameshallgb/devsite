@@ -1,0 +1,87 @@
+/*---------------------------------------------------------------
+    Buttons
+--------------------------------------------------------------- */
+
+button, .btn {
+    display: inline-block;
+    padding: 15px;
+    color: $blanc;
+    text-decoration: none; 
+    border: 1px solid $vert;     
+    text-transform: uppercase;
+    transition: .6s;
+    font-weight: bold;
+    font-size: 1.4rem;
+    width: 100%;
+
+    @include bp480{
+        width: auto;
+    }
+
+    @include bp800{
+        padding: 25px 30px;
+    }
+    
+    &:hover {
+        background: $noir;
+        color: $blanc;
+        border-color: $blanc;
+        text-decoration: none;
+    }
+
+    &:after{
+        content: "\f105";
+        font-family: "icomoon";
+        margin-left: 20px;
+    }
+
+    &--vert{
+        background: $vert;
+        color: $noir;
+        border: none;
+
+        &:hover{
+            background: $jaune;
+            color: $noir !important;
+        }
+    }
+    &--noir{
+        background: lighten($noir,5);
+        color: $blanc !important;
+        border: none;
+
+        &:hover{
+            background: $jaune;
+            color: $noir !important;
+        }
+    }
+    &--noir-vert{
+        background: lighten($noir,5);
+        color: $blanc !important;
+        border: 1px solid $vert;
+
+        &:hover{
+            background: $jaune;
+            color: $noir !important;
+        }
+    }
+    &--gris{
+        background: lighten($noir,15);
+        color: $blanc !important;
+        border: none;
+
+        &:hover{
+            background: $jaune;
+            color: $noir !important;
+        }
+    }
+    &--angle-down{
+        &:after{
+            content: "\f107";
+        }
+    }
+    &:focus{
+        outline: 0;
+    }
+}
+

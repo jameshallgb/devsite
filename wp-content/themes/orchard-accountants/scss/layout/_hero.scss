@@ -1,0 +1,237 @@
+/*---------------------------------------------------------------
+    Hero
+--------------------------------------------------------------- */
+
+.hero {
+    padding: 0 20px;
+    z-index: 100;
+    position: relative;
+    display: block;
+
+    @include bp480{
+        padding: 0 40px;
+    }
+    @include bp1200{
+        padding: 0 80px;
+    }
+
+    &:before{
+        filter: grayscale(1);
+        content: "";
+        display: block;
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        background-size: 0 -50%;
+        background-position:  center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: -50px;
+
+
+        @include bp1200{
+            margin-top: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+
+    }
+    &:after{
+
+        content: "";
+        display: block;
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        background: linear-gradient($noir, rgba($noir,.65), $noir 95%);
+
+        @include bp1200{
+            height: 100%;
+            background: linear-gradient($noir, rgba($noir,.2), $noir 85%);
+
+        }
+    }
+
+    .hero-video-container {
+      display: none;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      @include bp1200 {
+        display: block;
+      }
+
+      video {
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        min-width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &--internal{
+        &:after{
+            background: linear-gradient($noir, rgba($noir,.65), $noir 100%);
+
+            @include bp1200{
+                background: linear-gradient($noir, rgba($noir,.45), $noir 100%);
+            }
+        }
+    }
+
+    &__container {
+        position: relative;
+        min-height: 400px;
+        width: 100%;
+        @include flexbox();
+        @include flex-wrap(wrap);
+
+
+        @include bp1200{
+            padding-top: 320px;
+        }
+    }
+
+    &__content {
+        @include flexbox();
+        @include flex-wrap(wrap);
+        @include justify-content(space-between);
+        @include align-items(flex-start);
+        @include flex-direction(column);
+        //background: green;
+        color: $blanc;
+        width: 100%;
+
+        @include bp1200{
+            width: 70%;
+        }
+    }
+    &__message{
+        width: 100%;
+        @include flexbox();
+        @include align-items(flex-start);
+        @include flex-direction(column);
+        padding: 0;
+
+
+        @include bp1200{
+            padding: 0 80px 80px 80px;
+        }
+
+        p + .btn{
+            margin-top: 40px
+        }
+    }
+    &__buckets{
+        width: 100%;
+
+        @include bp1200{
+            width: calc(100% - (80px));
+        }
+    }
+
+    &__form{
+        width: 100%;
+        background: rgba(lighten($noir,12.5),.75);
+       // height: 700px;
+        padding: 20px;
+        box-shadow: 0 0 80px rgba($noir,.5);
+
+        @include bp1200{
+            width: 30%;
+            padding: 60px;
+        }
+    }
+    &__title{
+        font-size: 2.4rem;
+
+        line-height: 1.25;
+
+        @include bp800{
+            font-size: 5.4rem;
+            font-weight: 300;
+            line-height: 1.1;
+        }
+
+        &--vert{
+            color: lighten($vert,5);
+        }
+    }
+    &__copy{
+        margin-top: 20px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        max-width: 680px;
+
+        @include bp800{
+            margin-top: 40px;
+            font-size: 2rem;
+        }
+
+
+        a{
+            color: $blanc;
+            text-decoration: none;
+        }
+    }
+    &__form-copy{
+        line-height: 1.25;
+        margin: 40px 0;
+
+    }
+    &__toggle{
+        display: none;
+        position: absolute;
+
+        &--active{
+            display: block;
+            background: linear-gradient(lighten($noir,15), rgba($noir,.85));
+            padding: 20px;
+            box-shadow: 0 0 80px rgba($noir,.5);
+            padding: 20px;
+            margin-top: 20px;
+            margin-left: -20px;
+            width: 100%;
+            position: absolute;
+            opacity: 0;
+
+            @include bp1200{
+                padding: 60px;
+                width: calc(30% - (0px));
+                margin-left: -60px;
+                margin-top: 60px;
+            }
+
+
+            @include animation(slide-in 600ms ease-out 300ms 1 forwards);
+
+            @include keyframes(slide-in) {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+
+
+        }
+    }
+
+}

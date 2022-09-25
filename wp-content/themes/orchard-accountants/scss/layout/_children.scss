@@ -1,0 +1,124 @@
+.children{
+
+	&__title{
+		font-size: 2.4rem;
+		text-transform: uppercase;
+		letter-spacing: 2.5px;
+		font-weight: 700;
+	}
+
+	&__list{
+		@include flexbox();
+		@include flex-wrap(wrap);
+		@include justify-content(flex-start);
+		@include align-items(stretch);
+		width: calc(100% + (20px)) !important;
+		margin: 40px -10px 40px -10px !important;
+
+		.current_page_item{
+			opacity: 0.5;
+			pointer-events: none;
+		}
+
+		li{
+			width: calc(50% - (20px));
+			background: $vert;
+			@include flexbox();
+			@include justify-content(center);
+			@include align-items(center);
+			text-align: center;
+			min-height: 120px;
+			padding: 20px;
+			margin: 10px;
+			font-size: 1.8rem;
+			text-transform: uppercase;
+			transition: .3s;
+
+			&:hover{
+				opacity: 0.85;
+			}
+
+			&:before{
+				display: none;
+			}
+
+			a{
+				text-decoration: none;
+				color: $noir;
+				line-height: 1.25;
+
+			}
+
+			&:nth-child(4n+1), &:nth-child(4n+4){
+				background: $noir;
+
+				a{
+					color: $blanc;
+				}
+			}
+			&:nth-child(4n+2), &:nth-child(4n+3){
+				background: $vert;
+
+				a{
+					color: $noir;
+				}
+			}
+			
+
+			@include bp800{
+				width: calc(25% - (20px));
+				&:nth-child(8n+1), &:nth-child(8n+3), &:nth-child(8n+6), &:nth-child(8n+8){
+					background: $noir;
+
+					a{
+						color: $blanc;
+					}
+				}
+				&:nth-child(8n+2), &:nth-child(8n+4), &:nth-child(8n+5), &:nth-child(8n+7){
+					background: $vert;
+
+					a{
+						color: $noir;
+					}
+				}
+			}
+
+			@include bp1200{
+				width: calc(33.3333% - (20px));
+
+				&:nth-child(6n+1), &:nth-child(6n+3), &:nth-child(6n+5){
+					background: $noir;
+
+					a{
+						color: $blanc;
+					}
+				}
+				&:nth-child(6n+2), &:nth-child(6n+4), &:nth-child(6n+6){
+					background: $vert;
+
+					a{
+						color: $noir;
+					}
+				}
+			}
+			@include bp1600{
+				width: calc(25% - (20px));
+
+				&:nth-child(8n+1), &:nth-child(8n+3), &:nth-child(8n+6), &:nth-child(8n+8){
+					background: $noir;
+
+					a{
+						color: $blanc;
+					}
+				}
+				&:nth-child(8n+2), &:nth-child(8n+4), &:nth-child(8n+5), &:nth-child(8n+7){
+					background: $vert;
+
+					a{
+						color: $noir;
+					}
+				}
+			}
+		}
+	}
+}

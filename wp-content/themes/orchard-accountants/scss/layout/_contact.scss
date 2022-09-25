@@ -1,0 +1,98 @@
+.branch{
+	background: lighten($noir,10);
+	box-shadow: 0 0 60px rgba($noir,.2);
+	margin-bottom: 80px;
+
+	&__map{
+
+	}
+	&__img{
+		min-width: 100%;
+	}
+	&__copy{
+		padding: 20px;
+		color: $blanc;
+
+		@include bp800{
+			padding: 40px;
+		}
+
+		@include bp1200{
+			padding: 80px;
+		}
+	}
+	&__title{
+		color: $vert;
+		margin: 0;
+		padding: 0;
+	}
+	&__address{
+		@include flexbox();
+		margin: 20px 0 !important;
+	}
+	&__address-line{
+		line-height: 1.25;
+		width: 100% !important;
+		margin: 4px 0 !important;
+
+		&:before{
+			display: none !important;
+		}
+	}
+	&__item{
+		margin: 0 !important;
+
+		a{
+			text-decoration: none;
+			color: $blanc;
+
+			&:hover{
+				color: $vert;
+			}
+		}
+		span{
+			font-weight: bold;
+		}
+	}
+}
+.contact-form{
+
+	width: 100%;
+
+	.nf-form-content{
+		overflow: visible !important;
+		@include flexbox();
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);
+		width: 100%;
+	}
+
+	.nf-field-element{
+		
+		input, textarea{
+			border: 0;
+			box-shadow: 0 0 30px rgba($noir,.2);
+			margin: 5px 0;
+		}
+	}
+	.nf-field-container{
+		width: 100%;
+
+		@include bp1200{
+			width: calc(50% - (10px));
+		}
+
+		&--full{
+			width: 100%;
+		}
+
+		ul {
+			li{
+				&:before{
+					display: none;
+				}
+			}
+		}
+	}
+
+}

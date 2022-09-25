@@ -1,0 +1,119 @@
+.testimonial{
+	
+	background: lighten($noir,5);
+	color: $blanc;
+	padding: 20px;
+	display: block;
+	position: relative;
+	max-width: 100%;
+	z-index: 10;
+
+	@include bp1200{
+		padding: 60px 80px 80px 80px;
+		margin-right: 8.3333%;
+		margin-left: 80px;
+		margin-bottom: -120px;
+
+		&:before{
+			content: "";
+			display: block;
+			position: absolute;
+			bottom: -20px;
+			left: 80px;
+			background: lighten($noir,5);
+			z-index: -1;
+			width: 80px;
+			height: 80px;
+			transform: skewY(-30deg);
+		}
+	}
+
+	&--page{
+		margin-bottom: 40px;
+		width: 100%;
+
+		@include bp1200{
+			padding: 60px 80px 80px 80px;
+			margin-right: 0;
+			margin-left: 0;
+			width: calc(50% - (40px));
+			margin-bottom: 120px;
+
+			&:before{
+				content: "";
+				display: block;
+				position: absolute;
+				bottom: -20px;
+				left: 80px;
+				background: lighten($noir,5);
+				z-index: -1;
+				width: 80px;
+				height: 80px;
+				transform: skewY(-30deg);
+			}
+		}
+	}
+	&--intro{
+		padding: 0;
+		color: $noir;
+		background: transparent;
+		margin-bottom: 120px;
+
+		&:before{
+			display: none;
+		}
+	}
+	
+
+	&__quote{
+		font-style: italic;
+		line-height: 1.5;
+
+		&--client{
+			color: darken($blanc,40);
+			margin-bottom: 20px;
+		}
+	}
+
+	&__left-quote{
+		display: none;
+
+		position: absolute;
+		top: -20px;
+		left: 20px;
+		font-size: 4rem;
+		color: $vert;
+
+		@include bp1200{
+			top: -50px;
+			left: 40px;
+			font-size: 8rem;
+			display: block;
+		}
+
+		&--show{
+			display: block;
+		}
+		
+	}
+	&__right-quote{
+		display: none;
+		position: absolute;
+		bottom: -21px;
+		right: 20px;
+		font-size: 4rem;
+		color: $vert;
+		
+
+		@include bp1200{
+			bottom: -15px;
+			right: 40px;
+			font-size: 8rem;
+			display: block;
+		}
+
+		&--show{
+			display: block;
+		}
+	}
+}

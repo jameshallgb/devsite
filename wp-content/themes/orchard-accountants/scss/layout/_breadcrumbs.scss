@@ -1,0 +1,32 @@
+
+#breadcrumbs {
+    margin: 1.8em 0;
+    font-size: 1.6rem;
+    color: darken($blanc,15);
+    text-transform: uppercase;
+    width: 100%;
+    border-top: 2px solid darken($blanc,5);
+    border-bottom: 2px solid darken($blanc,5);
+    padding: 5px 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    a {
+        color: darken($blanc,25);
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+            color:$vert;
+        }
+        margin-right: 0.5em;
+    }
+
+    .breadcrumb_last {
+        font-weight: normal;
+        color:$vert;
+    }
+    span{
+        margin: 0 0.5em;
+    }
+}
